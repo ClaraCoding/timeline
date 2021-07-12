@@ -1,0 +1,61 @@
+
+<h2>Détails du timeline</h2>
+<section>
+  <form id="timeline-details">
+         <label for="name">Name</label>
+    <textarea id="name" name="" type="text" >{{timeline?.name}}</textarea>
+      <label for="category">Categorie</label>
+    <textarea id="category" name="cat" type="text">{{timeline?.category}}</textarea>
+         <label for="creationDate">Date de creation</label>
+    <textarea id="creationDate" name="creation" type="datetime-local" >{{timeline?.creationDate}}</textarea>
+        <button>Sauvegarder</button>
+  </form>
+</section>
+
+<h2>Edition d'une carte</h2>
+<p></p>
+<section>
+  <form id="card_details">
+    <label for="name">Name</label>
+    <input id="name" name="" type="text" >
+    <label for="creationDate">Date de creation</label>
+    <input id="creationDate" name="creation" type="datetime-local">
+    <label for="url">Url de l'image</label>
+    <input id="url" name="urlImage" type="text">
+    <label for="description">Description</label>
+    <input id="description" name="urlImage" type="text">
+    <button>Sauvegarder</button>
+    <button class="button fancy-button">Enregistrer une nouvelle carte</button>
+  </form>
+</section>
+
+<h2>Liste des cartes</h2>
+<p></p>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Nom</th>
+    <th>Date</th>
+    <th>Url Image</th>
+    <th>Description</th>
+    <th>Editer?</th>
+    <th>Supprimer?</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let card of cardsDeck">
+    <td>{{card.id}}</td>
+    <td> {{card.name}}</td>
+    <td>{{card.date | date: "dd/MM/yyyy"}}</td>
+    <td><a href="{{card.imageUrl}}">{{card.name}}_url</a></td>
+    <td>{{card.description}}</td>
+    <td>TODO = fonction Modifier</td>
+    <td>
+      <button (click)="delete(card)">Supprimer</button>
+    </td>
+
+  </tr>
+  </tbody>
+</table>

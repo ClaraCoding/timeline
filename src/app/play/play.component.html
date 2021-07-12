@@ -1,0 +1,29 @@
+<h2>Carte à deviner</h2>
+
+<div id="cardToGuess" *ngIf="cardToGuess">
+  <h3>{{cardToGuess.name}}</h3>
+  <img src="{{cardToGuess.imageUrl}}">
+  <h4>{{cardToGuess.description}}</h4>
+
+
+<form id="date-picker-form" [formGroup]="dateForm" >
+  <label for="dateToGuess">C'était en quelle année déjà?</label>
+  <input id="dateToGuess" type="number" required="true" formControlName="guessedDate">
+  <button (click)="play(cardToGuess)">Go!</button>
+  <div>--?-- {{correctAnswer}}</div>
+</form>
+</div>
+
+
+<h2>Cartes trouvées</h2>
+
+<div class="card-guessed" *ngFor="let guessedCard of guessedCards">
+<!--  <h3>{{test.name}}</h3>-->
+
+  <h3>{{guessedCard.date}}</h3>
+  <h3>{{guessedCard.name}}</h3>
+  <img [src]="guessedCard.imageUrl" >
+  <h4>{{guessedCard.description}}</h4>
+</div>
+
+

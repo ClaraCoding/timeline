@@ -1,0 +1,30 @@
+<p>game works!</p>
+
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Nom</th>
+    <th>Date de création</th>
+    <th>Date de mise à jour</th>
+    <th>Catégorie</th>
+    <th>Nombre de cartes</th>
+    <th>Editer?</th>
+    <th>Jouer!</th>
+    <th>Supprimer?</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let timeline of timelines">
+    <td>{{timeline.id}}</td>
+    <td> {{timeline.name}}</td><td>{{timeline.creationDate | date: "dd/MM/yyyy"}}</td>
+    <td>{{timeline.updateDate | date: "dd/MM/yyyy"}}</td><td>{{timeline.category}}</td>
+<td>{{timeline.cardList.length}}</td>
+    <td><a routerLink ="/edit/{{timeline.id}}">Modifier</a></td>
+    <td><a routerLink="/play/{{timeline.id}}">Jouer</a></td>
+    <td> <button (click)="delete(timeline)">Supprimer</button></td>
+
+  </tr>
+  </tbody>
+</table>
