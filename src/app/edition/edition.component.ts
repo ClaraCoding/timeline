@@ -42,11 +42,8 @@ export class EditionComponent implements OnInit {
   }
 
   //TODO récupérer une seule carte pour la modifier
-  // GetCardToModifyById() {
-  //   const routeParams = this.route.snapshot.paramMap;
-  //   const cardIdFromRoute = Number(routeParams.get('cardId'));
-  //   //Find the matching card
-  //   this.cardToModify = this.cardsDeck.find(card => card.id === cardIdFromRoute);
-  // }
+  getCardToModifyById(cardId: any) {
+    this.cardToModify = this.cardsDeck.find(card => card.id === cardId);
+  }
 }
 

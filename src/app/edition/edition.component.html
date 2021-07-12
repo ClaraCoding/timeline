@@ -51,7 +51,7 @@
     <td>{{card.date | date: "dd/MM/yyyy"}}</td>
     <td><a href="{{card.imageUrl}}">{{card.name}}_url</a></td>
     <td>{{card.description}}</td>
-    <td>TODO = fonction Modifier</td>
+    <td><button (click)="getCardToModifyById(card.id)">Modifier</button> </td>
     <td>
       <button (click)="delete(card)">Supprimer</button>
     </td>
